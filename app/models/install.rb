@@ -1,0 +1,3 @@
+class Install < ApplicationRecord
+  
+end

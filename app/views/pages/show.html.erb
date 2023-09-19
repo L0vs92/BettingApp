@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Page Title</title>
+
+	<link href="show.css"> 
+
+</head>
+
+<body>
+    <div class="navbar">
+      <div
+        data-animation="default"
+        data-collapse="medium"
+        data-duration="400"
+        data-easing="ease"
+        data-easing2="ease"
+        role="banner"
+        class="navbar-container w-nav"
+      >
+        <div class="container">
+          <div class="navbar-wrapper">
+            <a href="/" class="navbar-brand w-nav-brand"
+              ><img
+                src="https://uploads-ssl.webflow.com/650824d879d04aebae0ac3de/650824d879d04aebae0ac485_logo.svg"
+                loading="lazy"
+                alt=""
+                class="nav-logo"
+            /></a>
+            <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+              <ul role="list" class="nav-menu w-list-unstyled">
+                <li><a href="/features" class="nav-link">Features</a></li>
+                <li><a href="/pricing" class="nav-link">Pricing</a></li>
+                <li><a href="/blog" class="nav-link">Blog</a></li>
+                <li>
+                  <a
+                    href="/about"
+                    aria-current="page"
+                    class="nav-link w--current"
+                    >About</a
+                  >
+                </li>
+                <li class="list-item">
+                  <div
+                    data-hover="false"
+                    data-delay="0"
+                    class="nav-dropdown w-dropdown"
+                  >
+                  </div>
+                </li>
+              </ul>
+              <% if current_user.present? %>
+                <div class="nav-menu-cta">
+                  <%= link_to "Sign out", destroy_user_session_path, class:"button muted w-button" %>
+                  <%= link_to "Dashboard", dashboard_path, class:"button w-button" %>
+                </div>
+              <% else %>
+                <div class="nav-menu-cta">
+                  <%= link_to "Log in", new_user_session_path, class:"button muted w-button" %>
+                  <%= link_to "Sign up", new_user_registration_path, class:"button w-button" %>
+                </div>
+              <% end %>
+            </nav>
+            <div class="menu-button w-nav-button">
+              <div class="w-icon-nav-menu"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    Many men
+</body>
+
+</html>
